@@ -1,5 +1,5 @@
-ORG 0x7C00
-BITS 16
+org 0x7C00
+bits 16
 
 main:
     mov ax,0
@@ -17,13 +17,13 @@ halt:
     jmp halt
 
 print:
-    PUSH si
-    PUSH ax
-    PUSH bx
+    push si
+    push ax
+    push bx
 
 print_loop:
-    LODSB 
-    OR al,al
+    lodsb
+    or al,al
     jz done_print
 
     mov ah,0x0E
