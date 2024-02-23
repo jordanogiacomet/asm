@@ -1,6 +1,18 @@
 org 0x7C00
 bits 16
 
+jmp short main
+nop
+
+bdb_oem: DB 'MSWIN4.1'
+bsb_bytes_per_sector DW 512
+bdb_sectors_per_cluster DB 1
+bdb_reserved_sectors  DW 1  
+bdb_fat_count:  DB 2
+bdb_dir_entries_count: DW 0E0h
+bdb_total_sectors   DW 2880
+bdb_media-descriptor_type DB 0F0h
+
 main:
     mov ax,0
     mov ds,ax
